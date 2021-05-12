@@ -46,10 +46,18 @@ const filter = function (collection, callback) {
 			nArr.push(item);
 		}
 	});
-  return nArr
+	return nArr;
 };
 //reject([1, 2, 3, 4, 5, 6], isEven);
-const reject = function (collection, callbackTest) {};
+const reject = function (collection, callbackTest) {
+	let newArr = []
+  each(collection, function (item) {
+		if (!callbackTest(item)) {
+			newArr.push(item);
+		}
+  })
+  return newArr
+};
 
 const uniq = function (array) {};
 
